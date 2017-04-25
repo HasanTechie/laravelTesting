@@ -12,8 +12,24 @@
 */
 
 Route::get('/', 'PostController@index');
-Route::get('/posts/{post}', 'PostController@show');
+Route::get('/post/create', 'PostController@create');
+Route::post('/post', 'PostController@store');
+//Route::get('/posts/{post}', 'PostController@show');
 
 //eloquent model => Post
 //controller => PostController
 //migration => create_posts_table
+
+
+/*
+post -> resource
+
+GET /post -> view all post
+GET /post/create (to create a post)
+POST /post
+POST /post/{id}/edit
+GET /post/{id} (for viewing selected post)
+PATCH /post/{id}/ (for editing)
+DELETE /post/{id}/ (for deleting)
+
+*/
