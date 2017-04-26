@@ -14,9 +14,11 @@
                 <label for="body">Body</label>
                     <textarea name="body" id="title" class="form-control"></textarea>
             </div>
+            @include('layout/errorlist')
             <div class="form-group">
                     <button type="submit" class="btn btn-primary">Publish</button>
             </div>
         </form>
+
     </div>
 @endsection

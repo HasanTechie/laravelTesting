@@ -10,11 +10,14 @@ class PostController extends Controller
     //
     public function index()
     {
-        return view('post/index');
+        $posts = Post::latest()->get();
+//        $posts = Post::orderBy('created_at', 'dsc')->get();
+        return view('post/index',compact('posts'));
     }
-    public function show()
+    public function show(Post $post)
     {
-        return view('post/show');
+
+        return view('post/show',compact('post'));
     }
     public function create()
     {
@@ -23,7 +26,11 @@ class PostController extends Controller
     public function store()
     {
 //        dd(\request()->all());
-//
+
+        $this->validate(\request(),[
+            'title' => 'required|max:10',
+            'body' => 'required'
+        ]);
         Post::create(request(['title','body']));
 
 //        Post::create([

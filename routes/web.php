@@ -14,7 +14,7 @@
 Route::get('/', 'PostController@index');
 Route::get('/post/create', 'PostController@create');
 Route::post('/post', 'PostController@store');
-//Route::get('/posts/{post}', 'PostController@show');
+Route::get('/post/{post}', 'PostController@show');
 
 //eloquent model => Post
 //controller => PostController
