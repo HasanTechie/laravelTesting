@@ -1,4 +1,4 @@
-@extends('layout/master')
+@extends('layouts/master')
 
 @section('content')
     <div class="col-sm-8 blog-main">
@@ -14,7 +14,7 @@
                 <label for="body">Body</label>
                     <textarea name="body" id="title" class="form-control"></textarea>
             </div>
-            @include('layout/errorlist')
+            @include('layouts/errors')
             <div class="form-group">
                     <button type="submit" class="btn btn-primary">Publish</button>
             </div>
