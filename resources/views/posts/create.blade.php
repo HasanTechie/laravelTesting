@@ -4,7 +4,7 @@
     <div class="col-sm-8 blog-main">
         <h1>Publish a Post</h1>
         <hr>
-        <form method="POST" action="/post">
+        <form method="POST" action="/posts">
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="title">Title</label>
