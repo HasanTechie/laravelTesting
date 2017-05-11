@@ -32,7 +32,7 @@ class RegistrationController extends Controller
 
         //sign them in
 
-        // \Auth::login(); //Auth fasaade /facade
+        // \Auth::login(); //Auth facade
 
         // \Request::input or use App\Request then Request::input
 
