@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
 //        \View()::composer  (view facade)
-        view()->composer('layouts/sidebar', function ($view){
+        view()->composer('layouts/sidebar', function ($view){ //callback function
             $view->with('archives', \App\Post::archives());
         });
     }
