@@ -11,6 +11,38 @@
 |
 */
 
+/*
+View => view() (companion helper function)
+Request => request()
+App => app()
+
+ */
+
+//laravel offer an App facade where we can bind() into the service countainer (the dependency injection container)
+
+/*
+ * single instance of a class
+App::singleton('App\Billing\Stripe', function (){
+    return new \App\Billing\Stripe(config('services.stripe.secret'));
+});
+*/
+//App::bind('App\Billing\Stripe', function (){
+//    return new \App\Billing\Stripe(config('services.stripe.secret'));
+//}); //this is the way to register the class with service container
+
+//App::instance('App\Billing\Stripe', $stripe);//swap instance with something else
+
+//to resolve something out of service container App::make or resolve()
+//$stripe = App::make('App\Billing\Stripe'); //resolve
+//$stripe = resolve('App\Billing\Stripe'); //resolve
+
+// ↑ this is very useful because otherwise every single time we need to build up new instance of stripe, we will be force to pass in all of its dependencies and in alot of situations, you have multiple dependencies and you have to build it up and you have factories and fairly complicated, but with approch you do it one time, you register this into service container and anywhere else in your app you can resolve it out of the container
+
+//dd($stripe);
+
+//dd(resolve('App\Billing\Stripe'));
+
+
 Route::get('/', 'PostsController@index')->name('home');
 Route::get('/posts/create', 'PostsController@create');
 Route::post('/posts', 'PostsController@store');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Repositories\Posts;
 use Carbon\Carbon;
 
 class PostsController extends Controller
@@ -11,15 +12,20 @@ class PostsController extends Controller
     //
 
     public function __construct()
+        //constructor injection means passing arguments into a new object constructor
     {
         $this->middleware('auth')->except(['index', 'show']);
     }
 
-    public function index()
+    public function index(Posts $posts)
+        //dependency injection means passing arguments to a function
     {
-        $posts = Post::latest()->
-        filter(request(['month', 'year']))->
-        get();
+        $posts = $posts->all();
+//        $posts = (new \App\Repositories\Posts)->all();
+
+//        $posts = Post::latest()->
+//        filter(request(['month', 'year']))->
+//        get();
 
 
 //        $posts = Post::orderBy('created_at', 'dsc')->get();

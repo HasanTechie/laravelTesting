@@ -177,6 +177,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //App\Providers\SocialMediaServiceProvider::class, (meri apna service provider)
+
     ],
 
     /*
