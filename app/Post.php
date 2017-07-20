@@ -51,4 +51,11 @@ class Post extends Model
         get()->
         toArray();
     }
+
+    public function tags(){
+        // Any post have many tags
+        // Any tag may apply to many posts
+
+        return $this->belongsToMany(Tag::class);
+    }
 }
