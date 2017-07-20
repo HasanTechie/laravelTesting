@@ -2,9 +2,18 @@
 
 @section('content')
     <div class="col-sm-8 blog-main">
-        <h1>{{$post->title}}</h1>
-        <p>
-        {{$post->body}}
+        <div class="blog-post">
+            <h2 class="blog-post-title"><a href="/posts/3">{{$post->title}}</a></h2>
+            <p class="blog-post-meta">{{$post->user->name}} on {{ $post->created_at->toFormattedDateString() }}</p>
+            <p>
+                {{$post->body}}
+            </p>
+        </div><!-- /.blog-post -->
+
+        <p>Tags :  @foreach($post->tags as $tag)
+                <a href="/posts/tags/{{$tag->name}}">{{strtolower($tag->name)}}</a>
+                   @endforeach
+        </p>
         <hr>
 
         <div class="comments">
@@ -38,6 +47,6 @@
                 </form>
             </div>
         </div>
-        </p>
+
     </div>
 @endsection

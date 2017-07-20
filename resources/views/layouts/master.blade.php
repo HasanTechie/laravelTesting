@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +10,11 @@
     <title>Blog Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="../css/app.css" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -24,14 +24,14 @@
 <style>
     #flash-message {
         position: absolute;
-        bottom:20px;
-        right:20px;
+        bottom: 20px;
+        right: 20px;
         z-index: 10;
     }
 </style>
 
 @if($flash = session('message'))
-    <div id="flash-message" class="alert alert-success" role="alert" >
+    <div id="flash-message" class="alert alert-success" role="alert">
         {{$flash}}
     </div>
 @endif
